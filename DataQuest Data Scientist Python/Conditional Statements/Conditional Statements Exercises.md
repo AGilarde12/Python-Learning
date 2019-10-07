@@ -20,3 +20,22 @@ for row in apps_data[1:]:
 
 avg_rating_free = sum(free_apps_ratings)/len(free_apps_ratings)
 ```
+
+Compute the average rating of non-gaming apps.
+
+```python
+opened_file = open('AppleStore.csv')
+from csv import reader
+read_file = reader(opened_file)
+apps_data = list(read_file)
+
+non_games_ratings = []
+for i in apps_data[1:]:
+    rating = float(i[7])
+    genre = i[11]
+    
+    if genre != 'Games':
+        non_games_ratings.append(rating)
+        
+avg_rating_non_games = sum(non_games_ratings)/len(non_games_ratings)
+```
