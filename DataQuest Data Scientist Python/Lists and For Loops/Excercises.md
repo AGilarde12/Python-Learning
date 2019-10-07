@@ -24,3 +24,21 @@ for i in app_data_set:
 
 avg_rating = rating_sum/len(app_data_set)    
 ```
+
+
+Compute the average app rating for all the 7,197 apps stored in the data set.
+(Data can be found in the data folder. The file is named AppleStore.csv)
+
+```python
+opened_file = open('AppleStore.csv')
+from csv import reader
+read_file = reader(opened_file)
+apps_data = list(read_file)
+
+rating_sum = 0
+for i in apps_data[1:]:
+    rating = float(i[7])
+    rating_sum = rating_sum + rating
+
+avg_rating = rating_sum/(len(apps_data)-1)
+```
