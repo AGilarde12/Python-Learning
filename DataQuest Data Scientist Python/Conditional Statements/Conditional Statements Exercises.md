@@ -39,3 +39,33 @@ for i in apps_data[1:]:
         
 avg_rating_non_games = sum(non_games_ratings)/len(non_games_ratings)
 ```
+
+What is the average rating of the apps that have a price greater than $9?
+How many apps have a price greater than $9?
+How many apps have a price smaller than or equal to $9?
+
+```python
+opened_file = open('AppleStore.csv')
+from csv import reader
+read_file = reader(opened_file)
+apps_data = list(read_file)
+
+p_over_9 = []
+n_apps_more_9 = 0
+n_apps_less_9 = 0
+for i in apps_data[1:]:
+    rating = float(i[7])
+    price = float(i[4])
+    if price > 9.0:
+        p_over_9.append(rating)
+        
+for i in apps_data[1:]:
+    rating = float(i[7])
+    price = float(i[4])
+    if price > 9.0:
+        n_apps_more_9 = n_apps_more_9 + 1
+    elif price <= 9.0:
+        n_apps_less_9 = n_apps_less_9 + 1
+
+avg_rating = sum(p_over_9) /  len(p_over_9)
+```
