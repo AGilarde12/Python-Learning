@@ -69,3 +69,33 @@ for i in apps_data[1:]:
 
 avg_rating = sum(p_over_9) /  len(p_over_9)
 ```
+
+* If the price of the app is 0, label the app as "free" by appending the string 'free' to the current iteration variable.
+* If the price of the app is greater than 0 and less than 20, label the app as "affordable." For efficiency purposes, use an elif clause.
+* If the app is greater or equal to 20 and less than 50, label the app as "expensive." For efficiency purposes, use an elif clause.
+* If the app is greater or equal to 50, label the app as "very expensive." For efficiency purposes, use an elif clause.
+* Name the newly created column "price_label" by appending the string 'price_label' to the first row of the apps_data data set.
+* Inspect the header row and the first five rows to see some of the changes you made.
+
+``` python
+opened_file = open('AppleStore.csv')
+from csv import reader
+read_file = reader(opened_file)
+apps_data = list(read_file)
+
+for app in apps_data[1:]:
+    price = float(app[4])
+    # Complete code from here
+    if price == 0.0:
+        app.append('free')
+    elif price > 0.0 and price < 20:
+        app.append('affordable')
+    elif price >= 20 and price < 50:
+        app.append('expensive')
+    elif price >= 50:
+        app.append('very expensive')
+
+apps_data[0].append('price_label')
+
+print(apps_data[-1])
+```
