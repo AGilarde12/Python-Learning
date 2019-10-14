@@ -133,3 +133,39 @@ for i in apps_data[1:]:
 
 print(content_ratings)
 ```
+Count the number of times each unique genre occurs
+```python
+opened_file = open('AppleStore.csv')
+from csv import reader
+read_file = reader(opened_file)
+apps_data = list(read_file)
+
+genre_counting = {}
+
+for i in apps_data[1:]:
+    genre = i[11]
+    if genre in genre_counting:
+        genre_counting[genre] += 1
+    else:
+        genre_counting[genre] = 1
+        
+        
+print(genre_counting)
+```
+Loop over the content_ratings dictionary and transform the frequencies to percentages
+Find out the percentage of apps that have a content rating of '17+'. Assign your answer to a variable named percentage_17_plus.
+Find out the percentage of apps that can be downloaded by a 15-year-old. Assign your answer to a variable named percentage_15_allowed.
+```python
+content_ratings = {'4+': 4433, '12+': 1155, '9+': 987, '17+': 622}
+total_number_of_apps = 7197
+
+for i in content_ratings:
+    content_ratings[i]/= total_number_of_apps
+    content_ratings[i] *= 100
+    
+print(content_ratings)
+percentage_17_plus = content_ratings['17+']
+percentage_15_allowed = content_ratings['4+'] + content_ratings['9+'] + content_ratings['12+']
+```
+
+
