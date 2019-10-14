@@ -168,4 +168,20 @@ percentage_17_plus = content_ratings['17+']
 percentage_15_allowed = content_ratings['4+'] + content_ratings['9+'] + content_ratings['12+']
 ```
 
+Transform the frequencies inside content_ratings to proportions and percentages while creating separate dictionaries for each.
+Optional challenge: try to solve this exercise using a single for loop 
 
+```python
+content_ratings = {'4+': 4433, '12+': 1155, '9+': 987, '17+': 622}
+total_number_of_apps = 7197
+
+c_ratings_proportions = {}
+c_ratings_percentages = {}
+
+for key in content_ratings:
+    proportion = content_ratings[key] / total_number_of_apps
+    percentage = proportion * 100
+    
+    c_ratings_proportions[key] = proportion
+    c_ratings_percentages[key] = percentage
+```
