@@ -185,3 +185,23 @@ for key in content_ratings:
     c_ratings_proportions[key] = proportion
     c_ratings_percentages[key] = percentage
 ```
+
+Extract the values in the size_bytes column in a separate list.
+Find out the minimum and the maximum app data size.
+
+```python
+opened_file = open('AppleStore.csv')
+from csv import reader
+read_file = reader(opened_file)
+apps_data = list(read_file)
+
+data_sizes = []
+
+for i in apps_data[1:]:
+    size = i[2]
+    data_sizes.append(float(size))
+    
+    min_size = min(data_sizes)
+    max_size = max(data_sizes)
+```
+
