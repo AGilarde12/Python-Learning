@@ -12,8 +12,9 @@ for rating in ratings:
         content_ratings[rating] = 1
 ```
 
-Write a function named extract() that can extract any column you want from the apps_data data set.
-Use the extract() function to extract the values in the prime_genre column. Store them in a variable named genres. The index number of this column is 11.
+* Write a function named extract() that can extract any column you want from the apps_data data set.
+* Use the extract() function to extract the values in the prime_genre column. Store them in a variable named genres. The index number of this column is 11.
+
 ```python
 opened_file = open('AppleStore.csv')
 from csv import reader
