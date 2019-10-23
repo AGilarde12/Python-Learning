@@ -16,4 +16,20 @@ print(max_val_test_0)
 del max
 ```
 
+* Write a function such that it only returns data sets without header rows.
+
+```python
+def open_dataset(file_name='AppleStore.csv', header=True):        
+    opened_file = open(file_name)
+    from csv import reader
+    read_file = reader(opened_file)
+    data = list(read_file)
+    
+    if header:
+        return data[1:]
+    else:
+        return data
+    
+apps_data = open_dataset()
+```
 
