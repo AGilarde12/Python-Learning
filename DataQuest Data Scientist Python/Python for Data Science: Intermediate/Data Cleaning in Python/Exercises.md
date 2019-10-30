@@ -1,7 +1,7 @@
 * Use a for loop to loop over the moma list of lists. In each iteration of the loop:
 
-Clean the Nationality column.
-Clean the Gender column of the data set (found at index 5 of the row) by repeating the same technique you used for the Nationality column.
+* Clean the Nationality column.
+* Clean the Gender column of the data set (found at index 5 of the row) by repeating the same technique you used for the Nationality column.
 
 ```python
 # Variables you create in previous screens
