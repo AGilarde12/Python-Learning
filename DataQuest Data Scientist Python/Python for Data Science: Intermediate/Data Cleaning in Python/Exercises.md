@@ -20,14 +20,14 @@ for i in moma:
     gender = gender.replace(")","")
     row[5] = gender
 ```
-1. Clean the Gender column.
-    Assign the value from the Gender column, at index 5, to a variable.
-    Make the changes to the value of that variable.
-    Use the str.title() method to make the capitalization uniform.
-    Use an if statement to check if the value is an empty string. If the value is an empty string, give it the value "Gender                Unknown/Other".
-    Assign the modified variable back to list index 5 of the row.
-    Clean the Nationality column of the data set (found at index 2) by repeating the same technique you used for the Gender column.
-    For missing values in the Nationality column, use the string "Nationality Unknown".
+* Clean the Gender column.
+* Assign the value from the Gender column, at index 5, to a variable.
+* Make the changes to the value of that variable.
+* Use the str.title() method to make the capitalization uniform.
+* Use an if statement to check if the value is an empty string. If the value is an empty string, give it the value "Gender                Unknown/Other".
+* Assign the modified variable back to list index 5 of the row.
+* Clean the Nationality column of the data set (found at index 2) by repeating the same technique you used for the Gender column.
+* For missing values in the Nationality column, use the string "Nationality Unknown".
 
 ```python
 for i in moma:
